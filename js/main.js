@@ -27,7 +27,7 @@ document.querySelector('.eq').addEventListener('click', calculate);
 function calculate() {
     if (display.value.slice(-1) == '+' || display.value.slice(-1) == '*' || display.value.slice(-1) == '/' || display.value.slice(-1) == '-') display.value = display.value.substring(0, display.value.length - 1);
     (eval(display.value) == Infinity || eval(display.value) == -Infinity) ? display.value = 'You can\'t divide by zero!'
-        : display.value = eval(display.value);
+        : display.value = parseFloat(eval(display.value)).toFixed(2);
     resRec = 1;
     opsBtn = 0;
 }
